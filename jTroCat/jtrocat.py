@@ -40,7 +40,7 @@ def client_sender(buffer):
         client.connect((target, port))
 
         if len(buffer):
-            client.send(buffer)
+            client.send(str.encode(buffer))
 
         while True:
             # now wait for data back
@@ -50,14 +50,17 @@ def client_sender(buffer):
             while recv_len:
                 data = client.recv(4096)
                 recv_len = len(data)
-                response += data
+                response += data.decode('utf-8')
 
                 if recv_len < 4096:
                     break
             print(response,)
 
             # wait for more input
-            buffer = input()
+            try:
+                buffer = input()
+            except EOFError as e:
+                print(e)
             buffer += "\n"
 
             # send it off
