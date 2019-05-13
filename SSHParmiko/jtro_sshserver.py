@@ -6,7 +6,7 @@ import threading
 
 
 # using the key from paramikto demo files
-host_key = paramiko.RSAKey(filename='test_rsa.key')
+host_key = paramiko.RSAKey(filename='public_rsa.key')
 
 
 class Server(paramiko.ServerInterface):
@@ -63,5 +63,9 @@ class Server(paramiko.ServerInterface):
             except:
                 jt_session.close()
     except Exception as e:
-        pass
+        print("[-] Exception. Code break! " + str(e))
+        try:
+            jt_session.close()
+        except:
+            pass
     sys.exit(1)

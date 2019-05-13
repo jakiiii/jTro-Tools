@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import sys
 import paramiko
 import threading
 import subprocess
@@ -24,6 +25,6 @@ def ssh_command(ip, user, passwd, command):
     return
 
 
-ssh_command('192.168.31.107', 'jaki', 'pythonlover', 'ClientConnected')
+ssh_command(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
 
 
