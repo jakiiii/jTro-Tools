@@ -33,7 +33,7 @@ netaddr==0.7.19
 NetfilterQueue==0.8.1
 numpy==1.16.3
 opencv-contrib-python==4.1.0.25
-opencv-contrib-python-headless==4.1.0.25
+opencv-contrib-python-headless==4.1.2.30
 opencv-python==4.1.0.25
 opencv-python-headless==4.1.0.25
 paramiko==2.4.2
